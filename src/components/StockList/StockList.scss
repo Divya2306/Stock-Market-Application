@@ -1,0 +1,60 @@
+@use "../../styles/variables" as var;
+@use "../../styles/mixins" as mix;
+
+// Stock list container
+.stock-list {
+  &__table {
+    width: 100%;
+    max-width: 56.25rem;
+    margin: 0 auto 1rem;
+    background: var.$text-color;
+    overflow: hidden;
+    box-shadow: 0 0.5rem 0.5rem var.$gray-light;
+    font-size: var.$font-small;
+    border-radius: 1rem;
+    border: 0.2rem solid var.$black-color;
+
+    @include mix.respond-to(mobile) {
+      font-size: var.$font-small;
+    }
+
+    // Table header styles
+    thead {
+      th {
+        padding: 1rem 2rem;
+        text-align: left;
+        font-size: var.$font-medium;
+        border-bottom: 0.125rem solid var.$black-color;
+
+        @include mix.respond-to(mobile) {
+          padding: 0.6rem;
+        }
+      }
+    }
+
+    // Table body row hover effect
+    tbody tr {
+      &:hover {
+        background: var.$text-color;
+      }
+    }
+
+    // Table cell styles
+    td {
+      padding: 0.5rem 2rem;
+      text-align: left;
+      font-size: var.$font-small;
+
+      @include mix.respond-to(mobile) {
+        padding: 0.6rem;
+      }
+    }
+  }
+
+  // Empty state styles
+  &__empty {
+    text-align: center;
+    padding: 2rem;
+    font-size: 1.2rem;
+  }
+}

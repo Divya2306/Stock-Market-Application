@@ -1,0 +1,83 @@
+@use "../../styles/_variables" as var;
+@use "../../styles/_mixins" as mix;
+
+// Stock header container
+.stock-header {
+  @include mix.flex(center, center, row, 0);
+  padding: 0.1rem 1rem;
+  border: 0.09rem solid var.$black-color;
+  width: 20rem;
+
+  // Dropdown styles
+  &__dropdown {
+    position: relative;
+    z-index: 10;
+
+    .symbol {
+      background-color: var.$yellow-color;
+      color: var.$hover-color;
+      border: 0.06rem solid var.$hover-color;
+      padding: 0.25rem 0.6rem;
+      margin-right: 0.4rem;
+      font-size: var.$font-small;
+    }
+  }
+
+  // Button styles
+  &__button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    font-size: var.$font-small;
+
+    .down {
+      padding-left: 0.4rem;
+      font-size: var.$font-small;
+      font-weight: bold;
+    }
+  }
+
+  // List styles
+  &__list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: var.$blue-gray;
+    color: var.$black-color;
+    width: 17rem;
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.5rem var.$black-color;
+    max-height: 15rem;
+    overflow-y: auto;
+    font-size: var.$font-small;
+    list-style: none;
+    padding-left: 0.6rem;
+
+    .symbol {
+      padding: 0.2rem 0.4rem;
+      font-size: var.$font-small;
+      margin-right: 0.5rem;
+      background-color: var.$blue-gray;
+      border: 0.06rem solid var.$black-color;
+      color: var.$black-color;
+    }
+  }
+
+  // Item styles
+  &__item {
+    padding: 0.8rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    border-bottom: 0.1rem solid var.$gray-light;
+
+    &:hover {
+      background: var.$gray-light;
+    }
+
+    &--active {
+      font-weight: bold;
+      color: var.$primary-color;
+    }
+  }
+}

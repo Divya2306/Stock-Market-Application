@@ -1,0 +1,65 @@
+@use "../../styles/variables" as var;
+
+// Transaction history container
+.transaction-history {
+  padding: 1rem;
+  max-height: 14.68rem;
+  height: 14.68rem;
+  overflow-y: auto;
+  border: 0.08rem solid var.$black-color;
+
+  h3 {
+    margin-bottom: 1rem;
+  }
+
+  // Empty state styles
+  &__empty {
+    text-align: center;
+    color: var.$gray-color;
+  }
+
+  // List styles
+  &__list {
+    list-style: none;
+    padding: 0;
+  }
+
+  // Item styles
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: var.$font-small;
+    align-items: center;
+    border: 0.1rem solid var.$black-color;
+  }
+
+  // Details styles
+  &__details {
+    display: flex;
+    flex-direction: column;
+
+    .date {
+      padding-top: 0.2rem;
+      font-size: 0.7rem;
+    }
+  }
+
+  // Buy transaction styles
+  .buy {
+    .transaction-history__type {
+      color: var.$green-color;
+      font-size: 0.8rem;
+    }
+  }
+
+  // Sell transaction styles
+  .sell {
+    .transaction-history__type {
+      color: var.$red-color;
+      font-size: 0.8rem;
+    }
+  }
+}

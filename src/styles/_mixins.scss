@@ -1,0 +1,17 @@
+// Responsive Breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 414px) {
+      @content;
+    }
+  }
+}
+
+// Flexbox Utility
+@mixin flex($justify: flex-start, $align: center, $direction: row, $gap: 0) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+  gap: $gap;
+}

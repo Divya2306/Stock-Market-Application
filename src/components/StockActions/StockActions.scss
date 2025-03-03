@@ -1,0 +1,51 @@
+@use "../../styles/variables" as var;
+
+// Stock actions container
+.stock-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  // Input styles
+  &__input {
+    padding: 0.6rem 1.5rem;
+    text-align: center;
+    font-size: 0.7rem;
+    border: 0.1rem solid var.$black-color;
+  }
+
+  input::placeholder {
+    color: var.$black-color;
+  }
+
+  // Button styles
+  &__button {
+    padding: 0.7rem 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &.buy {
+      border: 0.06rem solid var.$green-color;
+      background-color: var.$light-green;
+      color: var.$green-color;
+    }
+
+    &.sell {
+      border: 0.06rem solid var.$red-color;
+      background-color: var.$light-red;
+      color: var.$red-color;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  // Status styles
+  &__status {
+    font-size: 1rem;
+    font-weight: bold;
+    color: var.$primary-color;
+  }
+}

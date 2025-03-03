@@ -1,0 +1,40 @@
+@use "../../styles/variables" as var;
+@use "../../styles/mixins" as mix;
+
+// Pagination container
+.pagination {
+  @include mix.flex(center, center, row, 0);
+  padding-top: 0.5rem;
+  padding-bottom: 0.7rem;
+
+  // Button styles
+  &__button {
+    background: none;
+    border: none;
+    font-size: var.$font-small;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    color: var.$primary-color;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: var.$hover-color;
+    }
+
+    &--active {
+      background: var.$gray-light;
+      border: 0.15rem solid var.$primary-color;
+      border-radius: 50%;
+      padding: 0.3rem 1rem;
+    }
+
+    &:disabled {
+      color: var.$gray-light;
+      cursor: not-allowed;
+    }
+  }
+
+  @include mix.respond-to(mobile) {
+    padding-left: 0rem;
+  }
+}

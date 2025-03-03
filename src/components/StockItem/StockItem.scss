@@ -1,0 +1,56 @@
+@use "../../styles/variables" as var;
+
+// Stock item container
+.stock-item {
+  border-bottom: 0.06rem solid var.$gray-color;
+
+  // Name styles
+  &__name {
+    padding-left: 2rem;
+  }
+
+  // Price styles
+  &__price {
+    text-align: center;
+  }
+
+  // Actions styles
+  &__actions {
+    padding-left: 3rem;
+  }
+
+  // Link styles
+  &__link {
+    text-decoration: none;
+    transition: color 0.3s;
+    color: var.$black-color;
+
+    &:hover {
+      text-decoration: underline;
+      color: var.$hover-color;
+    }
+  }
+
+  // Icon styles
+  &__icon {
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+
+    &--add {
+      color: var.$primary-color;
+    }
+
+    &--added {
+      color: var.$primary-color;
+    }
+
+    &--remove {
+      color: var.$red-color;
+    }
+
+    &:hover {
+      color: var.$hover-color;
+    }
+  }
+}

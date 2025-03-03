@@ -1,0 +1,77 @@
+@use "../../styles/variables" as var;
+
+// Stock graph container
+.stock-graph {
+  position: relative;
+  height: 28.5rem;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: var.$text-color;
+  border: 1px solid var.$gray-light;
+  padding-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  // Grid styles
+  &__grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+  }
+
+  // Grid row styles
+  &__grid-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 20%;
+  }
+
+  // Grid cell styles
+  &__grid-cell {
+    width: 10%;
+    height: 100%;
+    border: 0.06rem solid var.$gray-color;
+    opacity: 0.2;
+  }
+
+  // Container styles
+  &__container {
+    display: flex;
+    align-items: flex-end;
+    height: 100%;
+    width: max-content;
+  }
+
+  // Bar styles
+  &__bar {
+    margin: 0 0.05rem;
+    transition: height 0.3s;
+  }
+
+  .green {
+    border: 0.06rem solid var.$green-color;
+    background-color: var.$light-green;
+  }
+
+  .red {
+    border: 0.06rem solid var.$red-color;
+    background-color: var.$light-red;
+  }
+
+  // X-axis styles
+  &__x-axis {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    gap: 6.25rem;
+    font-size: var.$font-small;
+    color: var.$gray-dark;
+  }
+}

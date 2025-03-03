@@ -1,0 +1,102 @@
+@use "../../styles/_variables" as var;
+@use "../../styles/_mixins" as mix;
+
+// Header container
+.header {
+  background-color: var.$primary-color;
+  padding: 0.4rem;
+  position: sticky;
+  top: 0.5rem;
+  width: 100%;
+  z-index: 100;
+
+  // Container styles
+  &__container {
+    @include mix.flex(space-between, center, row, 0);
+    max-width: var.$max-width;
+    margin: 0 auto;
+  }
+
+  // Logo styles
+  &__logo {
+    font-size: var.$font-large;
+    font-weight: bold;
+    color: var.$text-color;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+
+    svg {
+      width: 2.5rem;
+      height: 2rem;
+    }
+  }
+
+  // Navigation styles
+  &__nav {
+    display: flex;
+    gap: 2rem;
+
+    @include mix.respond-to(mobile) {
+      display: none;
+    }
+
+    &-link {
+      color: var.$text-color;
+      text-decoration: none;
+      font-size: var.$font-medium;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: var.$hover-color;
+      }
+    }
+  }
+
+  // Hamburger menu styles
+  &__hamburger {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var.$text-color;
+
+    @include mix.respond-to(mobile) {
+      display: block;
+    }
+  }
+
+  // Mobile menu styles
+  &__mobile-menu {
+    display: none;
+    position: absolute;
+    top: 4rem;
+    right: 0rem;
+    background: var.$primary-color;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.25rem 0.5rem var.$black-color;
+    width: 12.5rem;
+    text-align: center;
+    z-index: 200;
+
+    @include mix.respond-to(mobile) {
+      display: block;
+    }
+  }
+
+  // Mobile link styles
+  &__mobile-link {
+    display: block;
+    color: var.$text-color;
+    text-decoration: none;
+    padding: 0.62rem 0;
+    font-size: var.$font-medium;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+    border-bottom: 0.1rem solid var.$text-color;
+
+    &:hover {
+      color: var.$hover-color;
+    }
+  }
+}

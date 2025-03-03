@@ -1,0 +1,28 @@
+@use "../../styles/_variables" as var;
+
+// Tabs container
+.tabs {
+  display: flex;
+  gap: 2rem;
+  padding: 1rem;
+
+  // Button styles
+  &__button {
+    background: none;
+    border: none;
+    font-size: var.$font-small;
+    font-weight: bold;
+    cursor: pointer;
+    color: var.$black-color;
+    padding-bottom: 0.5rem;
+    transition: color 0.3s ease-in-out;
+
+    &--active {
+      border-bottom: 0.2rem solid var.$primary-color;
+    }
+
+    &:hover {
+      color: var.$primary-color;
+    }
+  }
+}
